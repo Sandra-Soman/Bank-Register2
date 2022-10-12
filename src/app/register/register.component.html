@@ -1,0 +1,43 @@
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"> -->
+
+<div class="text-white ms-5 p-3"> </div>
+<div class="container-1">
+    <div class="content w-50 rounded-3">
+    <form (ngSubmit)="register() " [formGroup]="registerForm">
+        <div class="text-center"><p class="fs-1">Register</p></div>
+    <div class="mb-3">
+        <label for="uname" class="form-label">User name</label>
+        <input name="accountname" type="text" placeholder="username" formControlName="uname"   class="form-control" id="uname" >
+      </div>
+      <div *ngIf="this.registerForm.get('uname')?.errors&&this.registerForm.get('uname')?.touched" class="text-danger"><p>invalid username</p></div>
+
+
+
+    <div class="mb-3">
+      <label for="acno" class="form-label">Account Number</label>
+      <input  name="accountnumber" type="password"  formControlName="acno" class="form-control" id="acno">
+    </div>
+
+    <div *ngIf="this.registerForm.get('acno')?.errors&&this.registerForm.get('acno')?.touched" class="text-danger"><p>invalid accountnumber</p></div>
+
+
+
+ <div class="mb-3">
+        <label for="pswd" class="form-label">Password</label>
+        <input  name="password" type="password"  formControlName="pswd" class="form-control" id="pswd">
+      </div>
+      <div *ngIf="this.registerForm.get('pswd')?.errors&&this.registerForm.get('pswd')?.touched" class="text-danger"><p>invalid password</p></div>
+
+
+      
+      <div class="text-center">
+        <button type="submit" class="btn btn-outline-primary mb-3 w-50 mt-3" (click)="register()">register</button></div>
+
+  <div class="text-center">
+      <p class="fs-6">Don't have an account?  <a href="" routerLink="register"  >Register here</a> 
+          <!-- <a href="./reg.html"> Create</a> -->
+       </p>
+  </div>
+  </form>
+    </div>
+</div>
